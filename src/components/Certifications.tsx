@@ -7,32 +7,32 @@ const certifications = [
   {
     title: "AWS Certified Solutions Architect",
     issuer: "LinkedIn Learning",
-    icon: "☁️",
+    icon: <Award className="w-8 h-8 text-crimson" />,
   },
   {
     title: "Microsoft Certified: Azure Fundamentals",
     issuer: "LinkedIn Learning",
-    icon: "☁️",
+    icon: <Award className="w-8 h-8 text-crimson" />,
   },
   {
     title: "Google Cloud Professional Cloud Architect",
     issuer: "Coursera",
-    icon: "☁️",
+    icon: <Award className="w-8 h-8 text-crimson" />,
   },
   {
     title: "Docker and Kubernetes: The Complete Guide",
     issuer: "LinkedIn Learning",
-    icon: "🐳",
+    icon: <Award className="w-8 h-8 text-crimson" />,
   },
   {
     title: "Terraform Associate Certification",
     issuer: "LinkedIn Learning",
-    icon: "🔧",
+    icon: <Award className="w-8 h-8 text-crimson" />,
   },
   {
     title: "DevOps Foundations: Lean and Agile",
     issuer: "LinkedIn Learning",
-    icon: "⚙️",
+    icon: <Award className="w-8 h-8 text-crimson" />,
   },
 ];
 
@@ -91,7 +91,7 @@ export const Certifications = () => {
                   <h3 className="text-lg font-bold text-foreground mb-2">{cert.title}</h3>
                   <p className="text-sm text-muted-foreground">{cert.issuer}</p>
                   <div className="absolute bottom-4 right-4 text-crimson">
-                    <Award className="w-6 h-6 animate-glow-pulse" />
+                    {/* <Award className="w-6 h-6 animate-glow-pulse" /> */}
                   </div>
                 </div>
 
@@ -102,7 +102,7 @@ export const Certifications = () => {
                   }`}
                   style={{ transform: "rotateY(180deg)" }}
                 >
-                  <ExternalLink className="w-12 h-12 text-white mb-4" />
+                  {/* <ExternalLink className="w-12 h-12 text-white mb-4" /> */}
                   <h3 className="text-lg font-bold text-white mb-2">{cert.title}</h3>
                   <p className="text-sm text-white/80 mb-4">Verified Certification</p>
                   <p className="text-xs text-white/70">Click to flip back</p>

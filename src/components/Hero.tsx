@@ -4,6 +4,8 @@ import { Link } from "react-scroll";
 import { Download, ArrowDown } from "lucide-react";
 import { Button } from "./ui/button";
 import heroBackground from "@/assets/hero-bg.jpg";
+import profileImg from "../assets/profile-img.png";
+
 
 export const Hero = () => {
   return (
@@ -33,6 +35,15 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
+              className="text-3xl md:text-3xl font-bold mb-4 text-white"
+            >
+              Hi, I'm
+            </motion.h1>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
               className="text-5xl md:text-7xl font-bold mb-4 text-white"
             >
               Gopi Ganesh
@@ -46,7 +57,7 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-2xl md:text-3xl font-semibold mb-6 text-silver"
+              className="text-2xl md:text-3xl font-semibold mb-6 text-white"
             >
               <TypeAnimation
                 sequence={[
@@ -69,23 +80,6 @@ export const Hero = () => {
               transition={{ delay: 0.6 }}
               className="mb-8"
             >
-              <div className="text-xl font-medium text-crimson mb-4">
-                <TypeAnimation
-                  sequence={[
-                    "Building Scalable Cloud Infrastructure",
-                    1500,
-                    "AWS | Azure | GCP",
-                    1500,
-                    "Kubernetes Orchestration",
-                    1500,
-                    "Terraform Automation",
-                    1500,
-                  ]}
-                  wrapper="div"
-                  speed={50}
-                  repeat={Infinity}
-                />
-              </div>
               <p className="text-lg text-silver/90 leading-relaxed">
                 Results-driven DevOps Engineer with 5+ years architecting, deploying, and managing scalable
                 cloud-native infrastructure across multi-cloud environments. Passionate about automation,
@@ -99,7 +93,7 @@ export const Hero = () => {
               transition={{ delay: 0.8 }}
               className="flex flex-wrap gap-4"
             >
-              <Link to="projects" spy={true} smooth={true} offset={-80} duration={500}>
+              <Link to="projects" spy smooth offset={-80} duration={500}>
                 <Button
                   size="lg"
                   className="bg-gradient-to-r from-crimson to-magenta hover:shadow-[0_0_30px_hsl(340_82%_52%/0.5)] transition-all duration-300"
@@ -108,6 +102,7 @@ export const Hero = () => {
                   <ArrowDown className="ml-2 w-4 h-4" />
                 </Button>
               </Link>
+
               <a href="/assets/resume.pdf" download>
                 <Button
                   size="lg"
@@ -121,36 +116,41 @@ export const Hero = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right - Profile Image Placeholder */}
+          {/* Right - Profile Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ delay: 0.5, duration: 0.8, type: "spring" }}
             className="relative"
           >
-            <div className="relative w-full max-w-md mx-auto">
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-crimson/20 to-magenta/20 backdrop-blur-sm border-2 border-silver/30 shadow-[0_0_40px_hsl(340_82%_52%/0.3)] overflow-hidden">
                 <div className="w-full h-full flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-48 h-48 mx-auto mb-4 rounded-full bg-gradient-to-br from-crimson to-magenta flex items-center justify-center text-8xl font-bold text-white">
-                      GG
-                    </div>
-                    <p className="text-silver/60 text-sm">Profile Photo</p>
-                  </div>
-                </div>
-              </div>
-              {/* Floating elements */}
-              <motion.div
-                animate={{ y: [0, -20, 0] }}
-                transition={{ duration: 3, repeat: Infinity }}
-                className="absolute -top-4 -right-4 w-24 h-24 bg-crimson/20 rounded-full blur-xl"
-              />
-              <motion.div
-                animate={{ y: [0, 20, 0] }}
-                transition={{ duration: 4, repeat: Infinity }}
-                className="absolute -bottom-4 -left-4 w-32 h-32 bg-magenta/20 rounded-full blur-xl"
-              />
-            </div>
+  <div className="text-center">
+    <motion.div
+      animate={{ y: [0, -15, 0], scale: [1, 1.03, 1] }}
+      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+      className="w-80 h-80 mx-auto mb-4 rounded-full bg-gradient-to-br from-crimson to-magenta p-[4px] shadow-[0_0_20px_hsl(340_82%_52%/0.4)] overflow-hidden"
+    >
+      <img
+        src={profileImg}
+        alt="Profile"
+        className="w-full h-full object-cover rounded-full"
+      />
+    </motion.div>
+  </div>
+</div>
+
+
+            {/* Floating elements */}
+            <motion.div
+              animate={{ y: [0, -20, 0] }}
+              transition={{ duration: 3, repeat: Infinity }}
+              className="absolute -top-4 -right-4 w-24 h-24 bg-crimson/20 rounded-full blur-xl"
+            />
+            <motion.div
+              animate={{ y: [0, 20, 0] }}
+              transition={{ duration: 4, repeat: Infinity }}
+              className="absolute -bottom-4 -left-4 w-32 h-32 bg-magenta/20 rounded-full blur-xl"
+            />
           </motion.div>
         </div>
       </div>
@@ -167,7 +167,11 @@ export const Hero = () => {
           transition={{ duration: 1.5, repeat: Infinity }}
           className="w-6 h-10 border-2 border-silver/50 rounded-full flex items-start justify-center p-2"
         >
-          <motion.div className="w-1.5 h-1.5 bg-crimson rounded-full" />
+          <motion.div
+            animate={{ opacity: [1, 0, 1] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+            className="w-1.5 h-1.5 bg-crimson rounded-full"
+          />
         </motion.div>
       </motion.div>
     </section>

@@ -51,7 +51,7 @@ export const Preloader = ({ onComplete }: PreloaderProps) => {
           </h1>
         </motion.div>
         
-        <div className="w-64 h-1 bg-charcoal/30 rounded-full overflow-hidden">
+        <div className="w-64 h-1 bg-charcoal/30 rounded-full overflow-hidden mx-auto">
           <motion.div
             className="h-full bg-gradient-to-r from-crimson to-magenta"
             initial={{ width: 0 }}

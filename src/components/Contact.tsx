@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Mail, MapPin, Phone, Linkedin, Globe, Send } from "lucide-react";
+import { Mail, MapPin, Phone, Linkedin, Send } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
@@ -18,7 +18,7 @@ const contactInfo = [
     icon: Mail,
     label: "Email",
     value: "gopiganesh.gm4@gmail.com",
-    link: "mailto:gopiganesh.gm4@gmail.com",
+    link: "https://mail.google.com/mail/?view=cm&to=gopiganesh.gm4@gmail.com",
   },
   {
     icon: Phone,
@@ -32,18 +32,13 @@ const contactInfo = [
     value: "linkedin.com/in/gulapalyamathamgopiganesh",
     link: "https://linkedin.com/in/gulapalyamathamgopiganesh",
   },
-  {
-    icon: Globe,
-    label: "Portfolio",
-    value: "applywizz-gopiganesh.vercel.app",
-    link: "https://applywizz-gopiganesh.vercel.app",
-  },
 ];
 
 export const Contact = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const { toast } = useToast();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -55,7 +50,6 @@ export const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
     confetti({
@@ -75,33 +69,39 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-muted/30 relative overflow-hidden" ref={ref}>
-      {/* Background decoration */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 right-10 w-96 h-96 bg-crimson rounded-full blur-[120px]" />
-        <div className="absolute bottom-20 left-10 w-72 h-72 bg-magenta rounded-full blur-[100px]" />
+    <section
+      id="contact"
+      className="py-20 bg-muted/30 relative overflow-hidden px-4 sm:px-6 lg:px-8"
+      ref={ref}
+    >
+      {/* Background Blurs */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-10 right-5 sm:top-20 sm:right-10 w-64 sm:w-96 h-64 sm:h-96 bg-crimson rounded-full blur-[100px]" />
+        <div className="absolute bottom-10 left-5 sm:bottom-20 sm:left-10 w-56 sm:w-72 h-56 sm:h-72 bg-magenta rounded-full blur-[90px]" />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto relative z-10 max-w-6xl">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-16 px-2"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
             Get In{" "}
             <span className="bg-gradient-to-r from-crimson to-magenta bg-clip-text text-transparent">
               Touch
             </span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-crimson to-magenta mx-auto mb-4" />
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2">
             Let's connect and discuss how I can help with your DevOps and cloud infrastructure needs.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        {/* Grid Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 md:gap-16 items-start">
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -117,25 +117,25 @@ export const Contact = () => {
                   initial={{ opacity: 0, x: -30 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                  whileHover={{ x: 10 }}
-                  className="flex items-center gap-4 p-4 bg-card border border-border rounded-xl hover:border-primary transition-all duration-300"
+                  whileHover={{ x: 6 }}
+                  className="flex items-center gap-4 sm:gap-6 p-4 sm:p-5 bg-card border border-border rounded-xl hover:border-primary transition-all duration-300"
                 >
-                  <div className="p-3 bg-gradient-to-br from-crimson to-magenta rounded-lg">
-                    <Icon className="w-6 h-6 text-white" />
+                  <div className="p-3 sm:p-4 bg-gradient-to-br from-crimson to-magenta rounded-lg shrink-0">
+                    <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
-                  <div className="flex-1">
-                    <p className="text-sm text-muted-foreground">{info.label}</p>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm text-muted-foreground truncate">{info.label}</p>
                     {info.link ? (
                       <a
                         href={info.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-foreground font-medium hover:text-crimson transition-colors"
+                        className="text-foreground font-medium hover:text-crimson transition-colors break-words"
                       >
                         {info.value}
                       </a>
                     ) : (
-                      <p className="text-foreground font-medium">{info.value}</p>
+                      <p className="text-foreground font-medium break-words">{info.value}</p>
                     )}
                   </div>
                 </motion.div>
@@ -148,8 +148,12 @@ export const Contact = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
+            className="w-full"
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-5 sm:space-y-6 bg-card/30 backdrop-blur-sm p-5 sm:p-8 rounded-2xl border border-border shadow-md"
+            >
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                   Your Name
@@ -161,7 +165,7 @@ export const Contact = () => {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
-                  className="h-12 border-border focus:border-crimson"
+                  className="h-11 sm:h-12 border-border focus:border-crimson text-sm sm:text-base"
                 />
               </div>
 
@@ -176,7 +180,7 @@ export const Contact = () => {
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   required
-                  className="h-12 border-border focus:border-crimson"
+                  className="h-11 sm:h-12 border-border focus:border-crimson text-sm sm:text-base"
                 />
               </div>
 
@@ -187,11 +191,11 @@ export const Contact = () => {
                 <Textarea
                   id="message"
                   placeholder="Tell me about your project..."
-                  rows={6}
+                  rows={5}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   required
-                  className="border-border focus:border-crimson resize-none"
+                  className="border-border focus:border-crimson resize-none text-sm sm:text-base"
                 />
               </div>
 
@@ -199,14 +203,14 @@ export const Contact = () => {
                 type="submit"
                 size="lg"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-crimson to-magenta hover:shadow-[0_0_30px_hsl(340_82%_52%/0.5)] transition-all duration-300"
+                className="w-full text-sm sm:text-base bg-gradient-to-r from-crimson to-magenta hover:shadow-[0_0_25px_hsl(340_82%_52%/0.5)] transition-all duration-300"
               >
                 {isSubmitting ? (
                   "Sending..."
                 ) : (
                   <>
                     Send Message
-                    <Send className="ml-2 w-4 h-4" />
+                    <Send className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
                   </>
                 )}
               </Button>

@@ -60,7 +60,7 @@ export const Footer = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-center text-silver/80"
           >
-            © {new Date().getFullYear()} Gopi Ganesh Gulapalyamatham — Crafted with React & Framer
+            © {new Date().getFullYear()} Gopi Ganesh Gulapalyamatham
             Motion ✨
           </motion.p>
         </div>

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Award, Briefcase, Users } from "lucide-react";
 
 const stats = [
@@ -24,43 +24,50 @@ export const About = () => {
 
   return (
     <section id="about" className="py-20 bg-background" ref={ref}>
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            About <span className="bg-gradient-to-r from-crimson to-magenta bg-clip-text text-transparent">Me</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+            About{" "}
+            <span className="bg-gradient-to-r from-crimson to-magenta bg-clip-text text-transparent">
+              Me
+            </span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-crimson to-magenta mx-auto" />
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 mb-16">
+        {/* About Text + Stats Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+          {/* Text Section */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-6"
           >
-            <p className="text-lg text-foreground/80 leading-relaxed">
+            <p className="text-base sm:text-lg text-foreground/80 leading-relaxed">
               I specialize in designing multi-cloud DevOps architectures using AWS, Azure, and GCP to deliver
               highly available, secure, and automated infrastructure. With expertise in Kubernetes orchestration,
               CI/CD automation, and Infrastructure as Code (Terraform, Ansible), I focus on reducing deployment
               friction and maximizing system reliability.
             </p>
-            <p className="text-lg text-foreground/80 leading-relaxed">
+            <p className="text-base sm:text-lg text-foreground/80 leading-relaxed">
               My toolkit includes Python, Bash, Helm, Prometheus, Grafana, and ArgoCD — empowering enterprises
               to achieve faster delivery cycles, improved security posture, and efficient resource utilization.
             </p>
           </motion.div>
 
+          {/* Stats Section */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="grid grid-cols-3 gap-6"
+            className="grid grid-cols-3 gap-4 sm:gap-6"
           >
             {stats.map((stat, index) => {
               const Icon = stat.icon;
@@ -70,14 +77,14 @@ export const About = () => {
                   initial={{ opacity: 0, scale: 0.5 }}
                   animate={isInView ? { opacity: 1, scale: 1 } : {}}
                   transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                  className="text-center p-6 rounded-2xl bg-card border border-border hover:border-primary transition-all duration-300 hover:shadow-[0_0_30px_hsl(348_78%_48%/0.2)]"
+                  className="text-center p-6 sm:p-10 md:p-12 rounded-2xl bg-card border border-border hover:border-primary transition-all duration-300 hover:shadow-[0_0_25px_hsl(348_78%_48%/0.2)]"
                 >
                   <Icon className="w-8 h-8 mx-auto mb-3 text-crimson" />
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={isInView ? { opacity: 1 } : {}}
                     transition={{ duration: 1, delay: 0.8 + index * 0.1 }}
-                    className="text-3xl font-bold bg-gradient-to-r from-crimson to-magenta bg-clip-text text-transparent"
+                    className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-crimson to-magenta bg-clip-text text-transparent"
                   >
                     <CountUp end={stat.value} duration={2} suffix={stat.suffix} />
                   </motion.div>
@@ -88,14 +95,17 @@ export const About = () => {
           </motion.div>
         </div>
 
+        {/* Core Technologies Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.8 }}
           className="text-center"
         >
-          <h3 className="text-2xl font-semibold mb-6 text-foreground/90">Core Technologies</h3>
-          <div className="flex flex-wrap justify-center gap-4">
+          <h3 className="text-xl sm:text-2xl font-semibold mb-6 text-foreground/90">
+            Core Technologies
+          </h3>
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-5">
             {highlights.map((tech, index) => (
               <motion.div
                 key={tech}
@@ -103,7 +113,7 @@ export const About = () => {
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.4, delay: 1 + index * 0.1 }}
                 whileHover={{ scale: 1.1 }}
-                className="px-6 py-3 rounded-full bg-gradient-to-r from-crimson/10 to-magenta/10 border border-crimson/30 text-foreground font-medium hover:shadow-[0_0_20px_hsl(340_82%_52%/0.3)] transition-all cursor-default"
+                className="px-5 py-2 sm:px-6 sm:py-3 rounded-full bg-gradient-to-r from-crimson/10 to-magenta/10 border border-crimson/30 text-foreground text-sm sm:text-base font-medium hover:shadow-[0_0_20px_hsl(340_82%_52%/0.3)] transition-all cursor-default"
               >
                 {tech}
               </motion.div>
@@ -115,7 +125,18 @@ export const About = () => {
   );
 };
 
-const CountUp = ({ end, duration, suffix }: { end: number; duration: number; suffix: string }) => {
+/* ==============================
+   ✅ CountUp Animation Component
+   ============================== */
+const CountUp = ({
+  end,
+  duration,
+  suffix,
+}: {
+  end: number;
+  duration: number;
+  suffix: string;
+}) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -130,10 +151,14 @@ const CountUp = ({ end, duration, suffix }: { end: number; duration: number; suf
         setCount(Math.floor(start));
       }
     }, 1000 / 60);
+
     return () => clearInterval(timer);
   }, [end, duration]);
 
-  return <>{count}{suffix}</>;
+  return (
+    <>
+      {count}
+      {suffix}
+    </>
+  );
 };
-
-import { useState, useEffect } from "react";

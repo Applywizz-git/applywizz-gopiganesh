@@ -76,9 +76,9 @@ export const Experience = () => {
               {/* Timeline Dot */}
               <div className="absolute left-8 md:left-1/2 top-6 w-5 h-5 bg-gradient-to-br from-primary to-magenta rounded-full border-4 border-background transform -translate-x-1/2 z-10 shadow-[0_0_25px_hsl(250_100%_65%/0.8)] animate-glow-pulse" />
 
-              <div className="ml-16 md:ml-0">
+              <div className="ml-16 md:ml-0 pr-6">
                 <div
-                  className={`bg-card/80 backdrop-blur-sm border-2 border-border rounded-2xl p-8 hover:border-primary/50 transition-all duration-500 hover:shadow-[0_0_40px_hsl(250_100%_65%/0.3)] hover:scale-[1.02] ${
+                  className={`bg-card/80 backdrop-blur-sm border-4 border-border rounded-2xl p-8 hover:border-primary/50 transition-all duration-500 hover:shadow-[0_0_40px_hsl(250_100%_65%/0.3)] hover:scale-[1.02] ${
                     index % 2 === 0 ? "" : "md:ml-8"
                   }`}
                 >
