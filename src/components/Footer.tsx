@@ -4,11 +4,11 @@ import { Button } from "./ui/button";
 import { animateScroll as scroll } from "react-scroll";
 
 const socialLinks = [
-  {
-    icon: Github,
-    href: "https://github.com",
-    label: "GitHub",
-  },
+  // {
+  //   icon: Github,
+  //   href: "https://github.com",
+  //   label: "GitHub",
+  // },
   {
     icon: Linkedin,
     href: "https://linkedin.com/in/gulapalyamathamgopiganesh",
@@ -16,7 +16,7 @@ const socialLinks = [
   },
   {
     icon: Mail,
-    href: "mailto:gopiganesh.gm4@gmail.com",
+    href: "https://mail.google.com/mail/?view=cm&to=gopiganesh.gm4@gmail.com",
     label: "Email",
   },
 ];
