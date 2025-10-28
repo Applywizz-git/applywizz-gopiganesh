@@ -34,8 +34,8 @@ export const Navbar = () => {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-border shadow-lg"
-          : "bg-transparent"
+          ? "bg-background/95 backdrop-blur-xl border-b border-border shadow-lg"
+          : "bg-background/50 backdrop-blur-md"
       }`}
     >
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
