@@ -1,73 +1,115 @@
-# Welcome to your Lovable project
+# Gopi Ganesh Gulapalyamatham – DevOps Engineer Portfolio
 
-## Project info
+A modern, immersive, and responsive portfolio showcasing the professional journey of **Gopi Ganesh Gulapalyamatham**, highlighting his DevOps, Cloud Engineering, and Automation expertise.
 
-**URL**: https://lovable.dev/projects/4a209906-c0c9-4fc6-a057-e0d268a61db2
+## 🎨 Design Features
 
-## How can I edit this code?
+- **Cinematic Preloader**: Silver "LOADING" sequence with progress bar
+- **Modern Color Palette**: Charcoal (#1B1B1D), Crimson (#C0392B), Silver (#C0C0C0), White (#FFFFFF), Magenta Accent (#D81B60)
+- **Glassmorphism & Gradients**: Smooth angled gradients and modern card designs
+- **Dark/Light Theme**: Toggle between themes with smooth transitions
+- **Animations**: Typewriter effects, counters, hover glows, elastic buttons, scroll reveals
 
-There are several ways of editing your application.
+## 🚀 Tech Stack
 
-**Use Lovable**
+### Frontend
+- **React** with **Vite** for blazing fast development
+- **TypeScript** for type safety
+- **Tailwind CSS** for utility-first styling
+- **Framer Motion** for smooth animations
+- **Swiper.js** for carousel functionality
+- **React Type Animation** for typewriter effects
+- **React Scroll** for smooth navigation
+- **Canvas Confetti** for celebration effects
+- **Lucide React** for beautiful icons
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/4a209906-c0c9-4fc6-a057-e0d268a61db2) and start prompting.
+### Design System
+- Custom HSL color tokens
+- Semantic design tokens for consistency
+- Custom animations and keyframes
+- Glassmorphism effects
 
-Changes made via Lovable will be committed automatically to this repo.
+## 📋 Sections
 
-**Use your preferred IDE**
+1. **Hero**: Dynamic typewriter headline with profile showcase
+2. **About**: Professional summary with animated counters
+3. **Experience**: Vertical timeline of career milestones
+4. **Projects**: Interactive Swiper carousel with tech badges
+5. **Skills**: Animated grid with 9 skill categories
+6. **Certifications**: Flip cards with hover effects (6 certifications)
+7. **Education**: Masters degree timeline
+8. **Contact**: Interactive form with confetti animation
+9. **Footer**: Social links and scroll-to-top button
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## ⚡ Key Features
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **Fully Responsive**: Desktop, tablet, and mobile optimized
+- **Keyboard Accessible**: ARIA-labeled forms and navigation
+- **SEO Optimized**: Meta tags, semantic HTML, proper heading structure
+- **Performance**: Lazy-loaded images, optimized animations
+- **Modern UX**: Smooth scrolling, parallax effects, interactive elements
 
-Follow these steps:
+## 🎯 Highlights
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+- **5+ Years** of DevOps experience
+- **10+ Projects** across AWS, Azure, and GCP
+- **Multi-Cloud Expertise**: Kubernetes, Terraform, CI/CD automation
+- **40% Deployment Efficiency** improvements
+- **35% Release Cycle** reduction
+- **20% Cost Optimization** through auto-scaling
+
+## 🛠 Installation & Development
+
+```bash
+# Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
+# Navigate to project directory
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-**Edit a file directly in GitHub**
+## 📦 Key Dependencies
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- framer-motion@latest - Animation library
+- swiper@latest - Carousel component
+- react-type-animation@latest - Typewriter effects
+- react-scroll@latest - Smooth scrolling
+- canvas-confetti@latest - Celebration effects
+- lucide-react@latest - Icon library
 
-**Use GitHub Codespaces**
+## 🎨 Color Tokens
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```css
+--crimson: 348 78% 48%
+--charcoal: 0 5% 11%
+--silver: 0 0% 75%
+--magenta: 340 82% 52%
+```
 
-## What technologies are used for this project?
+## 📱 Contact
 
-This project is built with:
+- **Location**: Northlake, TX, USA
+- **Email**: gopiganesh.gm4@gmail.com
+- **Phone**: +1 (940) 206-9529
+- **LinkedIn**: [linkedin.com/in/gulapalyamathamgopiganesh](https://linkedin.com/in/gulapalyamathamgopiganesh)
+- **Portfolio**: [applywizz-gopiganesh.vercel.app](https://applywizz-gopiganesh.vercel.app)
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 📄 License
 
-## How can I deploy this project?
+© 2025 Gopi Ganesh Gulapalyamatham — Crafted with React & Framer Motion ✨
 
-Simply open [Lovable](https://lovable.dev/projects/4a209906-c0c9-4fc6-a057-e0d268a61db2) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Built with ❤️ using React + Vite + Tailwind CSS + Framer Motion
