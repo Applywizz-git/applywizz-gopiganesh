@@ -36,7 +36,7 @@ export const Preloader = ({ onComplete }: PreloaderProps) => {
           transition={{ duration: 0.5 }}
           className="mb-8"
         >
-          <h1 className="text-6xl font-bold tracking-[0.5em] text-silver">
+          <h1 className="text-6xl font-semibold tracking-[0.2em] text-silver">
             {["L", "O", "A", "D", "I", "N", "G"].map((letter, i) => (
               <motion.span
                 key={i}
