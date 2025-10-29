@@ -94,7 +94,7 @@ export const Experience = () => {
                           <Calendar className="w-4 h-4" />
                           {exp.period}
                         </span>
-                        <span>📍 {exp.location}</span>
+                        <span> {exp.location}</span>
                       </div>
                     </div>
                   </div>
